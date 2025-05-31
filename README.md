@@ -91,13 +91,14 @@ python manage.py migrate
 В одном терминале:
 
 ```bash
-celery -A habit_tracker worker --loglevel=info
+celery -A 
+config worker --loglevel=info
 ```
 
 В другом — планировщик задач (beat):
 
 ```bash
-celery -A habit_tracker beat --loglevel=info
+celery -A config beat --loglevel=info
 ```
 
 ### 7. Запуск Django-сервера
@@ -168,7 +169,7 @@ flake8 .
 ## Структура проекта
 
 ```
-├── habit_tracker/        # django-проект
+├── config/        # django-проект
 │   ├── settings.py
 │   ├── celery.py
 │   └── urls.py

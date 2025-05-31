@@ -14,7 +14,7 @@ DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
-
+AUTH_USER_MODEL = 'users.User'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'habits',
+    'users',
     'notifications',
     'drf_yasg',
 ]
@@ -68,7 +69,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-ROOT_URLCONF = "habit_tracker.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -85,7 +86,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "habit_tracker.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 
