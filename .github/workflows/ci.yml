@@ -46,7 +46,7 @@ jobs:
         run: pytest
 
       - name: Build Docker images
-        run: docker-compose build
+        run: docker compose build
 
       - name: Deploy to server
         run: |
