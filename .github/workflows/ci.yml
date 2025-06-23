@@ -50,6 +50,6 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh choz@158.160.189.92 "cd C:\Users\Komp\PycharmProjects\my_project_1_skypro\useful_habits && git pull && docker-compose up -d"
+          ssh choz@158.160.189.92 'cd /home/choz/my_project_1_skypro/useful_habits && git pull && docker-compose up -d'
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
