@@ -53,3 +53,9 @@ jobs:
           ssh choz@158.160.189.92 'cd /home/choz/my_project_1_skypro/useful_habits && git pull && docker-compose up -d'
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+  deploy:
+      name: Deploy to Remote Server
+      needs: tests
+      if: github.ref == 'refs/heads/develop'
+      runs-on: ubuntu-latest
