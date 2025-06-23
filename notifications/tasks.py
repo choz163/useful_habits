@@ -5,10 +5,11 @@ from telegram import Bot
 from .models import TelegramUser
 from habits.models import Habit
 
+
 @shared_task
 def send_reminders():
     now = timezone.localtime().time().replace(second=0, microsecond=0)
-    today = timezone.localdate()
+    timezone.localdate()
     # выбираем привычки, у которых time == now и сегодня нужно напомнить
     habits = Habit.objects.filter(time=now)
     bot = Bot(token=settings.TELEGRAM_TOKEN)
